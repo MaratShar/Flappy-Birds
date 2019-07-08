@@ -18,7 +18,7 @@ var text = draw.text("0").move(400, 20).fill(
 var group = draw.group().x(0)
 group.add(column_top)
 group.add(column_bottom)
-for (var i = 0; i < 4; i++){
+for (var i = 1; i < 4; i++){
 	var new_top = column_top.clone()
 	new_top.dx(120 * i)
 	var new_bottom = column_bottom.clone()
@@ -44,7 +44,7 @@ function update() {
 			alert("Пингвин пострадал");
 			clearInterval(id_interval);
 		}
-		if (columnTop.x() == 0) {
+		if (columnTop.x() <= 0) {
 			columnTop.x(480)
 			columnBottom.x(480)
 			columnTop.y(getRandomInt(-70, -10))
